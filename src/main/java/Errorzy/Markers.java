@@ -7,27 +7,28 @@ import java.util.List;
 @XmlRootElement
 public class Markers {
 
-
-    private List<Country> countrylist;
+    private List<Country> countryList;
 
     public Markers() {
     }
 
-    public Markers(List<Country> countrylist) {
-        this.countrylist = countrylist;
+    public Markers(List<Country> countryList) {
+        this.countryList = countryList;
     }
 
     @XmlElement(name = "country")
-    public List<Country> getCountrylist() {
-        return countrylist;
+    public List<Country> getCountryList() {
+        return countryList;
+    }
+
+    public void setCountryList(List<Country> countryList) {
+        this.countryList = countryList;
     }
 
     @Override
     public String toString() {
         return "Markers{" +
-                "countrylist=" + countrylist +
+                "countryList=" + countryList +
                 '}';
     }
-
-
 }

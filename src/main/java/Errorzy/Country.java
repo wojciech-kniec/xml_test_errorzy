@@ -1,18 +1,13 @@
 package Errorzy;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import java.util.List;
 
 
-//@XmlRootElement//(name = "markers")
-//@XmlAccessorType(XmlAccessType.FIELD)
-
-
 public class Country {
-    //    private List<City> cityList;
+
+    private List<City> cityList;
     private double lat;
     private double lng;
     private String name;
@@ -35,14 +30,50 @@ public class Country {
     private int available_bikes;
     private String pricing;
 
-//    @XmlElement(name = "city")
-//    public List<City> getCityList() {
-//        return cityList;
-//    }
-//
-//    public void setCityList(List<City> cityList) {
-//        this.cityList = cityList;
-//    }
+    public Country() {
+    }
+
+    public Country(List<City> cityList, double lat, double lng, String country_name) {
+        this.cityList = cityList;
+        this.lat = lat;
+        this.lng = lng;
+        this.country_name = country_name;
+    }
+
+    @XmlElement(name = "city")
+    public List<City> getCityList() {
+        return cityList;
+    }
+
+    public void setCityList(List<City> cityList) {
+        this.cityList = cityList;
+    }
+
+    @XmlAttribute(name = "lat")
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    @XmlAttribute(name = "lng")
+    public double getLng() {
+        return lng;
+    }
+
+    public void setLng(double lng) {
+        this.lng = lng;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getZoom() {
         return zoom;
@@ -116,18 +147,17 @@ public class Country {
         this.system_operator_address = system_operator_address;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
     public void setCountry(String country) {
         this.country = country;
     }
 
     @XmlAttribute(name = "country_name")
-
     public String getCountry_name() {
         return country_name;
+    }
+
+    public String getCountry() {
+        return country;
     }
 
     public void setCountry_name(String country_name) {
@@ -174,7 +204,6 @@ public class Country {
         this.set_point_bikes = set_point_bikes;
     }
 
-    @XmlAttribute(name = "available_bikes")
     public int getAvailable_bikes() {
         return available_bikes;
     }
@@ -191,57 +220,13 @@ public class Country {
         this.pricing = pricing;
     }
 
-    @XmlAttribute(name = "lat")
-    public double getLat() {
-        return lat;
-    }
-
-    public void setLat(double lat) {
-        this.lat = lat;
-    }
-
-    @XmlAttribute(name = "lng")
-    public double getLng() {
-        return lng;
-    }
-
-    public void setLng(double lng) {
-        this.lng = lng;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Country() {
-
-    }
-
-
-    public Country(double lat, double lng, String country_name, int available_bikes) {
-        this.lat = lat;
-        this.lng = lng;
-        this.country_name = country_name;
-        this.available_bikes = available_bikes;
-//        this.cityList = cityList;
-    }
-
     @Override
     public String toString() {
-        return "Country [country name = " + country_name
-                + ", lateral = " + lat
-                + ", longitude = " + lng
-                + ", Available bikes = " + available_bikes + "]";
+        return "Country{" +
+                "cityList=" + cityList +
+                ", lat=" + lat +
+                ", lng=" + lng +
+                ", country_name='" + country_name + '\'' +
+                '}';
     }
-//    @Override
-//    public String toString() {
-//        return "{" +
-//                "countrylist=" + cityList +'}';
-//    }
-
-
 }

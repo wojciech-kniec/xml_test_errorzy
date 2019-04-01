@@ -1,5 +1,7 @@
 package Errorzy;
 
+import javax.xml.bind.annotation.XmlAttribute;
+
 public class Bike {
     private int number;
     private int bike_type;
@@ -7,10 +9,34 @@ public class Bike {
     private int active;
     private String state;
     private int electric_lock;
-//board_computer long czy String?
     private String board_computer;
     private int pedelec_battery;
 
+    public Bike() {
+    }
+
+    public Bike(int number, int bike_type) {
+        this.number = number;
+        this.bike_type = bike_type;
+    }
+
+    @XmlAttribute(name = "number")
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    @XmlAttribute(name = "bike_type")
+    public int getBike_type() {
+        return bike_type;
+    }
+
+    public void setBike_type(int bike_type) {
+        this.bike_type = bike_type;
+    }
 
     public String getLock_type() {
         return lock_type;
@@ -28,33 +54,6 @@ public class Bike {
         this.active = active;
     }
 
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-
-    public int getBikeType() {
-        return bike_type;
-    }
-
-    public void setBikeType(int bikeType) {
-        this.bike_type = bikeType;
-
-    }
-
-    public int getBike_type() {
-        return bike_type;
-    }
-
-    public void setBike_type(int bike_type) {
-        this.bike_type = bike_type;
-    }
-
     public String getState() {
         return state;
     }
@@ -63,12 +62,12 @@ public class Bike {
         this.state = state;
     }
 
-    public int getElectrick_lock() {
+    public int getElectric_lock() {
         return electric_lock;
     }
 
-    public void setElectrick_lock(int electrick_lock) {
-        this.electric_lock = electrick_lock;
+    public void setElectric_lock(int electric_lock) {
+        this.electric_lock = electric_lock;
     }
 
     public String getBoard_computer() {
@@ -85,5 +84,13 @@ public class Bike {
 
     public void setPedelec_battery(int pedelec_battery) {
         this.pedelec_battery = pedelec_battery;
+    }
+
+    @Override
+    public String toString() {
+        return "Bike{" +
+                "number=" + number +
+                ", bike_type=" + bike_type +
+                '}';
     }
 }

@@ -1,6 +1,11 @@
 package Errorzy;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import java.util.List;
+
 public class Place {
+
     private int uid;
     private double lat;
     private double lng;
@@ -15,6 +20,53 @@ public class Place {
     private int[] bike_numbers;
     private String bike_types;
     private int place_type;
+    private List<Bike> bikeList;
+
+    public Place() {
+    }
+
+    public Place(double lat, double lng, String name, int number, List<Bike> bikeList) {
+        this.lat = lat;
+        this.lng = lng;
+        this.name = name;
+        this.number = number;
+        this.bikeList = bikeList;
+    }
+
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
+    }
+
+    @XmlAttribute(name = "lat")
+    public double getLat() {
+        return lat;
+    }
+
+    public void setLat(double lat) {
+        this.lat = lat;
+    }
+
+    @XmlAttribute(name = "lng")
+    public double getLng() {
+        return lng;
+    }
+
+    public void setLng(double lng) {
+        this.lng = lng;
+    }
+
+    @XmlAttribute(name = "name")
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getSpot() {
         return spot;
@@ -24,12 +76,21 @@ public class Place {
         this.spot = spot;
     }
 
+    @XmlAttribute(name = "number")
     public int getNumber() {
         return number;
     }
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public int getBikes() {
+        return bikes;
+    }
+
+    public void setBikes(int bikes) {
+        this.bikes = bikes;
     }
 
     public int getBooked_bikes() {
@@ -88,43 +149,23 @@ public class Place {
         this.place_type = place_type;
     }
 
-    public int getUid() {
-        return uid;
+    @XmlElement(name = "bike")
+    public List<Bike> getBikeList() {
+        return bikeList;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setBikeList(List<Bike> bikeList) {
+        this.bikeList = bikeList;
     }
 
-    public double getLat() {
-        return lat;
-    }
-
-    public void setLat(double lat) {
-        this.lat = lat;
-    }
-
-    public double getLng() {
-        return lng;
-    }
-
-    public void setLng(double lng) {
-        this.lng = lng;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getBikes() {
-        return bikes;
-    }
-
-    public void setBikes(int bikes) {
-        this.bikes = bikes;
+    @Override
+    public String toString() {
+        return "Place{" +
+                "lat=" + lat +
+                ", lng=" + lng +
+                ", name='" + name + '\'' +
+                ", number=" + number +
+                ", bikeList=" + bikeList +
+                '}';
     }
 }

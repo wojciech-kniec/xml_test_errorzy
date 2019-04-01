@@ -12,9 +12,6 @@ public class App {
     public static void main(String[] args) throws JAXBException {
 
         System.out.println("Let's ride!");
-//        System.out.println("   ,__o");
-//        System.out.println(" _-\\_<,");
-//        System.out.println("(*)/'(*)");
         System.out.println("                                          $\"   *.      \n" +
                 "              d$$$$$$$P\"                  $    J\n" +
                 "                  ^$.                     4r  \"\n" +
@@ -34,11 +31,11 @@ public class App {
                 "       \"*==*\"\"                             ^\"*==*\"\"   ");
         System.out.println("");
 
-        File file = new File("nextbike-official.xml");
+        File file = new File("src/nextbike-live_polska.xml");
         JAXBContext jaxbContext = JAXBContext.newInstance(Markers.class);
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
         Markers markerslist = (Markers) jaxbUnmarshaller.unmarshal(file);
-        System.out.println(markerslist.getCountrylist());
+        System.out.println(markerslist.getCountryList().get(0).getCityList().get(0).getPlaceList().get(0).getBikeList().get(0));
 
 
 
