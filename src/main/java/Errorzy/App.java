@@ -1,9 +1,13 @@
 package Errorzy;
 
+import Errorzy.bikeFinder.FindCountry;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * temp main
@@ -37,9 +41,14 @@ public class App {
         Markers markerslist = (Markers) jaxbUnmarshaller.unmarshal(file);
         System.out.println(markerslist.getCountryList().get(0).getCityList().get(0).getPlaceList().get(0).getBikeList().get(0));
 
-
-
-
+        FindCountry findCountry = new FindCountry();
+        findCountry.returnCountryList();
+        List<City> cities = new ArrayList<>();
+        cities = markerslist.getCountryList().get(0).getCityList();
+        List<Place> places = new ArrayList<>();
+        places = cities.get(0).getPlaceList();
+        List<Bike> bikes = new ArrayList<>();
+        bikes = places.get(0).getBikeList();
 
     }
 }
