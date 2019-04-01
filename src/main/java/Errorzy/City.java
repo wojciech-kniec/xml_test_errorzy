@@ -2,8 +2,6 @@ package Errorzy;
 
 
 import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
-
 
 
 
@@ -104,7 +102,7 @@ public class City {
         this.bike_types = bike_types;
     }
 
-    @XmlAttribute(name = "uid")
+//    @XmlAttribute(name = "uid")
     public int getUid() {
         return uid;
     }
@@ -148,6 +146,24 @@ public class City {
     public void setAvailable_bikes(int available_bikes) {
         this.available_bikes = available_bikes;
     }
+
+//    public City(double lat, double lng, String name, int available_bikes) {
+//        this.lat = lat;
+//        this.lng = lng;
+//        this.name = name;
+//        this.available_bikes = available_bikes;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "Miasto [nazwa miasta = " + name
+//                + ", szer = " + lat
+//                + ", dl = " + lng
+//                + ", dostepne rowery w miescie = " + available_bikes + "]";
+//    }
+//
+//    public City() {
+//    }
 }
 
 

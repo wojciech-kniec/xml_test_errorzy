@@ -1,11 +1,18 @@
 package Errorzy;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import java.util.List;
 
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "country")
+//@XmlRootElement//(name = "markers")
+//@XmlAccessorType(XmlAccessType.FIELD)
+
 
 public class Country {
+    //    private List<City> cityList;
     private double lat;
     private double lng;
     private String name;
@@ -27,6 +34,15 @@ public class Country {
     private int set_point_bikes;
     private int available_bikes;
     private String pricing;
+
+//    @XmlElement(name = "city")
+//    public List<City> getCityList() {
+//        return cityList;
+//    }
+//
+//    public void setCityList(List<City> cityList) {
+//        this.cityList = cityList;
+//    }
 
     public int getZoom() {
         return zoom;
@@ -108,6 +124,8 @@ public class Country {
         this.country = country;
     }
 
+    @XmlAttribute(name = "country_name")
+
     public String getCountry_name() {
         return country_name;
     }
@@ -156,6 +174,7 @@ public class Country {
         this.set_point_bikes = set_point_bikes;
     }
 
+    @XmlAttribute(name = "available_bikes")
     public int getAvailable_bikes() {
         return available_bikes;
     }
@@ -172,6 +191,7 @@ public class Country {
         this.pricing = pricing;
     }
 
+    @XmlAttribute(name = "lat")
     public double getLat() {
         return lat;
     }
@@ -180,6 +200,7 @@ public class Country {
         this.lat = lat;
     }
 
+    @XmlAttribute(name = "lng")
     public double getLng() {
         return lng;
     }
@@ -195,4 +216,32 @@ public class Country {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Country() {
+
+    }
+
+
+    public Country(double lat, double lng, String country_name, int available_bikes) {
+        this.lat = lat;
+        this.lng = lng;
+        this.country_name = country_name;
+        this.available_bikes = available_bikes;
+//        this.cityList = cityList;
+    }
+
+    @Override
+    public String toString() {
+        return "Country [country name = " + country_name
+                + ", lateral = " + lat
+                + ", longitude = " + lng
+                + ", Available bikes = " + available_bikes + "]";
+    }
+//    @Override
+//    public String toString() {
+//        return "{" +
+//                "countrylist=" + cityList +'}';
+//    }
+
+
 }
