@@ -16,7 +16,7 @@ public class App {
 
 
             File file = new File("src/nextbike-live_polska.xml");
-            JAXBContext jaxbContext = JAXBContext.newInstance(City.class);
+            JAXBContext jaxbContext = JAXBContext.newInstance(Country.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             City postCode = (City) jaxbUnmarshaller.unmarshal(file);
