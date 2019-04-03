@@ -9,7 +9,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
+//import java.util.stream.Collectors;
 
 /**
  * temp main
@@ -49,14 +49,14 @@ public class App {
         List<City> cities = new ArrayList<>();
 
 
-        cities = markerslist.getCountryList().getClass();
-        for (City city : cities) {
-            System.out.println(city.getName());
-        }
-        List<Place> places = new ArrayList<>();
-        places = cities.get(0).getPlaceList();
-        List<Bike> bikes = new ArrayList<>();
-        bikes = places.get(0).getBikeList();
+//        cities = markerslist.getCountryList().getClass();
+//        for (City city : cities) {
+//            System.out.println(city.getName());
+//        }
+//        List<Place> places = new ArrayList<>();
+//        places = cities.get(0).getPlaceList();
+//        List<Bike> bikes = new ArrayList<>();
+//        bikes = places.get(0).getBikeList();
 
     }
 
