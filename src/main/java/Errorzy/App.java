@@ -35,7 +35,7 @@ public class App {
                 "  \".  *       *  .P                    %. *        *  @\n" +
                 "    %.         z*\"                      ^%.        .r\"\n" +
                 "       \"*==*\"\"                             ^\"*==*\"\"   ");
-        System.out.println("");
+        System.out.println("  ");
 
         File file = new File("nextbike-official.xml");
         JAXBContext jaxbContext = JAXBContext.newInstance(Markers.class);
